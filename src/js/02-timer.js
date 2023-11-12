@@ -67,7 +67,7 @@ function onTimerStart() {
 
     // console.log(fp.selectedDates[0]);
     // console.log(startTime);
-    console.log(countdown);
+    // console.log(countdown);
 
     if (countdown < 0) {
       clearInterval(timerId);

@@ -3,7 +3,6 @@ const refs = {
   startBtn: document.querySelector('[data-start]'),
   stopBtn: document.querySelector('[data-stop]'),
 };
-refs.stopBtn.disabled = true;
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -11,6 +10,7 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
+refs.stopBtn.disabled = true;
 let timerId = null;
 
 refs.startBtn.addEventListener('click', () => {
