@@ -20,6 +20,7 @@ img {
 /*task 1*/
 
 a {
+  margin: 100px;
   width: 35px;
   height: 15px;
   border: 1px solid rgb(19, 200, 200);
