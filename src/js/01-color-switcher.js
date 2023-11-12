@@ -25,25 +25,25 @@ refs.stopBtn.addEventListener('click', () => {
   refs.stopBtn.disabled = true;
 });
 // ----------------------------inline style-----------
-refs.startBtn.style.margin = '500px 20px auto 500px';
-refs.startBtn.style.padding = '15px 40px';
-refs.stopBtn.style.padding = '15px 40px';
-refs.stopBtn.style.padding = '15px 40px';
-refs.startBtn.style.fontSize = '18px';
-refs.stopBtn.style.fontSize = '18px';
-refs.startBtn.style.coursor = '18px';
-refs.stopBtn.style.cursor = 'pointer';
-refs.startBtn.style.cursor = 'pointer';
+// refs.startBtn.style.margin = '500px 20px auto 500px';
+// refs.startBtn.style.padding = '15px 40px';
+// refs.stopBtn.style.padding = '15px 40px';
+// refs.stopBtn.style.padding = '15px 40px';
+// refs.startBtn.style.fontSize = '18px';
+// refs.stopBtn.style.fontSize = '18px';
+// refs.startBtn.style.coursor = '18px';
+// refs.stopBtn.style.cursor = 'pointer';
+// refs.startBtn.style.cursor = 'pointer';
 
-refs.startBtn.addEventListener('mouseover', () => {
-  refs.startBtn.style.backgroundColor = '#d9d9e2';
-});
-refs.stopBtn.addEventListener('mouseover', () => {
-  refs.stopBtn.style.backgroundColor = '#d9d9e2';
-});
-refs.startBtn.addEventListener('mouseout', () => {
-  refs.startBtn.style.backgroundColor = '';
-});
-refs.stopBtn.addEventListener('mouseout', () => {
-  refs.stopBtn.style.backgroundColor = '';
-});
+// refs.startBtn.addEventListener('mouseover', () => {
+//   refs.startBtn.style.backgroundColor = '#d9d9e2';
+// });
+// refs.stopBtn.addEventListener('mouseover', () => {
+//   refs.stopBtn.style.backgroundColor = '#d9d9e2';
+// });
+// refs.startBtn.addEventListener('mouseout', () => {
+//   refs.startBtn.style.backgroundColor = '';
+// });
+// refs.stopBtn.addEventListener('mouseout', () => {
+//   refs.stopBtn.style.backgroundColor = '';
+// });
