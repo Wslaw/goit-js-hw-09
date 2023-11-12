@@ -10,10 +10,35 @@ const refs = {
   timerFieldSeconds: document.querySelector('[data-seconds]'),
 };
 
+refs.startBtn.addEventListener('click', onTimerStart);
 refs.startBtn.disabled = true;
 
+const options = {
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+  
+  onClose(selectedDates) {
+    const currentDate = new Date();
+    
+    if (selectedDates[0] > currentDate) {
+           refs.startBtn.disabled = false;
+    } else {
+       refs.startBtn.disabled = true;
+       Notify.failure('Please choose a date in the future', {
+         timeout: 2000,
+         width: '400px',
+       });
+    }
+  },
+};
+
+const fp = flatpickr('#datetime-picker', options);
+
+let timerId = 0;
+
 function convertMs(ms) {
-  // Number of milliseconds per unit of time
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
@@ -27,49 +52,28 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-// console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-// console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-// console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
-
-const options = {
-  enableTime: true,
-  time_24hr: true,
-  defaultDate: new Date(),
-  minuteIncrement: 1,
-  onClose(selectedDates) {
-    console.log(selectedDates[0]);
-    const currentDate = new Date();
-    const selectedDate = selectedDates[0];
-    if (selectedDate < currentDate) {
-      refs.startBtn.disabled = true;
-      Notify.failure('Please choose a date in the future', {
-        timeout: 2000,
-        width: '400px',
-      });
-    } else {
-      refs.startBtn.disabled = false;
-    }
-  },
-};
 
 function addLeadingZero(value) {
-  return value.padStart(2, 0);
+  return String(value).padStart(2, 0);
 }
 
 function onTimerStart() {
-  console.log("Start");
+  const selectedDate = fp.selectedDates[0];
 
-  const timerId = setInterval(() => {
-    const curDate = new Data();
-    refs.startBtn.disabled = true;
-    console.log(fp.selectedDates[0]);
-    console.log(curDate);
-    console.log(different);
-    if (different < 0) {
+ timerId = setInterval(() => {
+   const startTime = new Date();
+   const countdown = selectedDate - startTime;
+   refs.startBtn.disabled = true;
+
+    // console.log(fp.selectedDates[0]);
+    // console.log(startTime);
+    console.log(countdown);
+
+    if (countdown < 0) {
       clearInterval(timerId);
       return;
     }
-    counter(different);
+    counter(convertMs(countdown));
   }, 1000);
 }
 
@@ -80,5 +84,3 @@ function counter({ days, hours, minutes, seconds }) {
   refs.timerFieldSeconds.textContent = addLeadingZero(seconds);
 }
 
-const fp = flatpickr('#datetime-picker', options);
-refs.startBtn.addEventListener('click', onTimerStart);
