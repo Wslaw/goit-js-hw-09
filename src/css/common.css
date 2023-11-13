@@ -128,7 +128,6 @@ a:focus {
   font-size: 22px;
 }
 
-
 .flatpickr-calendar .flatpickr-innerContainer {
   background-color: rgb(139, 234, 241);
 }
@@ -137,7 +136,72 @@ a:focus {
   background-color: rgb(139, 224, 241, 0.6);
 }
 .flatpickr-calendar .flatpickr-day.today,
-.flatpickr-calendar .flatpickr-day.selected{
-    background-color: rgba(70, 187, 210, 0.6);
-
+.flatpickr-calendar .flatpickr-day.selected {
+  background-color: rgba(70, 187, 210, 0.6);
 }
+/* Task 3 */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form label {
+  margin-bottom: 20px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 330px;
+  height: 45px;
+  font-size: 18px;
+  text-align: center;
+  color: #2a2a2a;
+  background-color: rgb(213, 228, 231);
+  border-radius: 5px;
+  border: none;
+  transition: 250ms;
+  }
+
+  .form input{
+    padding: 5px;
+    width: 180px;
+    height: auto;
+    font-size: 18px;
+    text-align: right;
+    color: #2a2a2a;
+  background-color: rgb(255, 255, 255,0.6);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: 250ms;
+  }
+
+  .form input:hover{    
+  background-color: rgb(255, 255, 255,1);   
+  }
+
+  .form button{
+    width: 330px;
+  height: 33px;
+  font-size: 18px;
+  text-align: center;
+  color: #2a2a2a;
+  background-color: rgb(213, 228, 231);
+  border-radius: 5px;
+  border: 1px solid #8b8787;
+  cursor: pointer;
+  transition: 250ms;
+  }
+
+  .form button:hover{    
+  background-color: rgb(181, 197, 200);
+  box-shadow: 2px 2px 2px #2a2a2a;
+    }
+
+    .form button:focus{  
+      outline: 3px solid rgb(181, 197, 200);  
+  background-color: rgb(181, 197, 200);
+  border: none;
+    }
