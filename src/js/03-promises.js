@@ -39,8 +39,10 @@ function createPromise(position, delay) {
   const promise = new Promise((res, rej) => {
     setTimeout(() => {
       if (shouldResolve) {
-        res(`Promisen ${position} resolved after ${delay} ms.`)
-      } else { rej(`Promisen ${position} rejected after ${delay} ms.`) }
+        return res(`Promisen ${position} resolved after ${delay} ms.`)
+      } else {
+        return rej(`Promisen ${position} rejected after ${delay} ms.`)
+      }
     }, delay);
     
   });
