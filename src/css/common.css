@@ -18,17 +18,24 @@ img {
 }
 
 /*task 1*/
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 15px;
+}
 
 a {
-  margin: 100px;
+  margin: 20px;
   width: 35px;
-  height: 15px;
+  height: 5px;
   border: 1px solid rgb(19, 200, 200);
   text-decoration: none;
-  list-style: none;
+  /* list-style: none; */
   padding: 5px 20px;
   border-radius: 7px;
-  background-color: rgb(96, 255, 253);
+  background-color: rgb(96, 255, 200);
   font-size: 18px;
   font-style: italic;
 }
@@ -71,7 +78,7 @@ a:focus {
 [data-stop]:disabled {
   color: rgb(0, 0, 0, 0.6);
   opacity: 0.8;
-  background-color: rgba(59, 59, 59, 0.6);
+  background-color: rgba(191, 180, 180, 0.6);
   border: 1px solid rgb(0, 0, 0, 0.6);
   cursor: not-allowed;
 }
@@ -118,5 +125,19 @@ a:focus {
   padding: 2px 4px;
   background-color: rgb(193, 240, 240);
   border-radius: 5px;
-  font-size: 24px;
+  font-size: 22px;
+}
+
+
+.flatpickr-calendar .flatpickr-innerContainer {
+  background-color: rgb(139, 234, 241);
+}
+.flatpickr-calendar .flatpickr-day {
+  color: rgb(13, 24, 21);
+  background-color: rgb(139, 224, 241, 0.6);
+}
+.flatpickr-calendar .flatpickr-day.today,
+.flatpickr-calendar .flatpickr-day.selected{
+    background-color: rgba(70, 187, 210, 0.6);
+
 }
