@@ -11,8 +11,8 @@ form.addEventListener('submit', onSubmit);
 function onSubmit (ev) {
   ev.preventDefault();
   const initialDelay = Number(delayInput.value);
-  // const step = Number(stepInput.value);
-  // const amount = Number(amountInput.value);
+  const step = Number(stepInput.value);
+  const amount = Number(amountInput.value);
 
    if (isNaN(initialDelay) || isNaN(step) || isNaN(amount)) {
      Notify.failure('Please enter all number.');
