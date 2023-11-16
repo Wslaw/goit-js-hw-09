@@ -11,8 +11,8 @@ form.addEventListener('submit', onSubmit);
 function onSubmit (ev) {
   ev.preventDefault();
   const initialDelay = Number(delayInput.value);
-  const step = Number(stepInput.value);
-  const amount = Number(amountInput.value);
+  // const step = Number(stepInput.value);
+  // const amount = Number(amountInput.value);
 
    if (isNaN(initialDelay) || isNaN(step) || isNaN(amount)) {
      Notify.failure('Please enter all number.');
@@ -24,11 +24,11 @@ function onSubmit (ev) {
     const currentDelay = initialDelay + i*step;
     createPromise(position, currentDelay)
       .then(result => {
-        console.log(result);
+        // console.log(result);
             Notify.success(`✅ Fulfilled promise ${position} in ${currentDelay}ms`);
       })
       .catch(error => {
-        console.error(error);
+        // console.error(error);
             Notify.failure(`❌ Rejected promise ${position} in ${currentDelay}ms`);
       });
   }
